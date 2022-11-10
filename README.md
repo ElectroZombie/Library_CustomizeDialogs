@@ -1,4 +1,5 @@
 #Documentación
 
 Libreria para crear ventanas emergentes personalizadas.
-Version 1.0 todavia en pruebas.
+Libreria .jar localizada en dist/
+Version 1.1 todavia en pruebas.

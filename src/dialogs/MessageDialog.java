@@ -9,15 +9,33 @@ public class MessageDialog extends AbstractFrame {
 
     
     private final AbstractFrame parent;
+    private final int seleccion;
 
    
     public MessageDialog(String dialogText, String dialogTitle, Language language, AbstractFrame parent){
         
         initComponents();
         
-        this.setSize(450, 200);
+        this.setSize(600, 300);
         this.setLocationRelativeTo(null);
         
+        this.seleccion=-1;
+        this.parent = parent;
+        this.DialogText.setText(dialogText);
+        this.setTitle(dialogTitle);
+        
+        this.setVisible(true);
+        parent.setEnabled(false);
+    }
+    
+    public MessageDialog(int seleccion, String dialogText, String dialogTitle, Language language, AbstractFrame parent){
+        
+        initComponents();
+        
+        this.setSize(600, 300);
+        this.setLocationRelativeTo(null);
+        
+        this.seleccion = seleccion;
         this.parent = parent;
         this.DialogText.setText(dialogText);
         this.setTitle(dialogTitle);
@@ -51,30 +69,32 @@ public class MessageDialog extends AbstractFrame {
 
         DialogText.setEditable(false);
         DialogText.setColumns(20);
+        DialogText.setLineWrap(true);
         DialogText.setRows(3);
+        DialogText.setWrapStyleWord(true);
         jScrollPane1.setViewportView(DialogText);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(189, Short.MAX_VALUE)
-                .addComponent(Accept)
-                .addGap(189, 189, 189))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 584, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(262, 262, 262)
+                .addComponent(Accept)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
-                .addGap(32, 32, 32)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
+                .addGap(36, 36, 36)
                 .addComponent(Accept)
-                .addGap(27, 27, 27))
+                .addGap(23, 23, 23))
         );
 
         pack();
@@ -82,11 +102,17 @@ public class MessageDialog extends AbstractFrame {
 
     private void AcceptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AcceptActionPerformed
         parent.setEnabled(true);
+        if(seleccion != -1){
+            parent.messageDialog_returnValue(seleccion);
+        }
         dispose();
     }//GEN-LAST:event_AcceptActionPerformed
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
         parent.setEnabled(true);
+        if(seleccion != -1){
+            parent.messageDialog_returnValue(seleccion);
+        }
         dispose();
     }//GEN-LAST:event_formWindowClosed
 

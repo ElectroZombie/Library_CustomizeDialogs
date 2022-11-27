@@ -11,13 +11,12 @@ public class ComboBoxDialog extends AbstractFrame{
     private final int selection;
     private String selectedValue;
     private final String formerValue;
-    private final Language language;
 
  public ComboBoxDialog(int selection, String dialogText, String dialogTitle, String[] options, String formerValue, Language language, AbstractFrame parent) {
         
         initComponents();        
         
-        this.setSize(450, 200);
+        this.setSize(600, 300);
         this.setLocationRelativeTo(null);
         
         this.formerValue = formerValue;
@@ -25,7 +24,6 @@ public class ComboBoxDialog extends AbstractFrame{
         this.selection = selection;
         this.setTitle(dialogTitle);
         this.DialogText.setText(dialogText);
-        this.language = language;
         
         if(language == Language.EN){
             Accept.setText("Accept");
@@ -70,7 +68,9 @@ public class ComboBoxDialog extends AbstractFrame{
 
         DialogText.setEditable(false);
         DialogText.setColumns(20);
+        DialogText.setLineWrap(true);
         DialogText.setRows(3);
+        DialogText.setWrapStyleWord(true);
         jScrollPane.setViewportView(DialogText);
 
         Accept.setText("Aceptar");
@@ -93,29 +93,31 @@ public class ComboBoxDialog extends AbstractFrame{
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Options, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(93, 93, 93)
-                        .addComponent(Accept)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
-                        .addComponent(Cancel)
-                        .addGap(91, 91, 91)))
+                .addComponent(jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(98, 98, 98)
+                .addComponent(Accept)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Cancel)
+                .addGap(105, 105, 105))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Options, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(Options, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Cancel)
-                    .addComponent(Accept))
-                .addContainerGap(27, Short.MAX_VALUE))
+                    .addComponent(Accept)
+                    .addComponent(Cancel))
+                .addGap(38, 38, 38))
         );
 
         pack();

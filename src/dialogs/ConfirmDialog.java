@@ -15,7 +15,7 @@ public class ConfirmDialog extends AbstractFrame {
         
         initComponents();
         
-        this.setSize(450, 200);
+        this.setSize(600, 300);
         this.setLocationRelativeTo(null);
         
         this.parent = parent;
@@ -67,7 +67,9 @@ public class ConfirmDialog extends AbstractFrame {
 
         DialogText.setEditable(false);
         DialogText.setColumns(20);
+        DialogText.setLineWrap(true);
         DialogText.setRows(3);
+        DialogText.setWrapStyleWord(true);
         jScrollPane1.setViewportView(DialogText);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -81,7 +83,7 @@ public class ConfirmDialog extends AbstractFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(96, 96, 96)
                 .addComponent(Accept)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 255, Short.MAX_VALUE)
                 .addComponent(Cancel)
                 .addGap(97, 97, 97))
         );
@@ -89,8 +91,8 @@ public class ConfirmDialog extends AbstractFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Accept)
                     .addComponent(Cancel))

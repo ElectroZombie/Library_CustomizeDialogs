@@ -17,7 +17,7 @@ public class InputDialog extends AbstractFrame {
         
         initComponents();
         
-        this.setSize(450, 200);
+        this.setSize(600, 300);
         this.setLocationRelativeTo(null);
         
         this.parent = parent;
@@ -81,7 +81,9 @@ public class InputDialog extends AbstractFrame {
 
         DialogText.setEditable(false);
         DialogText.setColumns(20);
+        DialogText.setLineWrap(true);
         DialogText.setRows(3);
+        DialogText.setWrapStyleWord(true);
         jScrollPane1.setViewportView(DialogText);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -95,7 +97,7 @@ public class InputDialog extends AbstractFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(98, 98, 98)
                 .addComponent(Accept)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 262, Short.MAX_VALUE)
                 .addComponent(Cancel)
                 .addGap(97, 97, 97))
             .addGroup(layout.createSequentialGroup()
@@ -107,10 +109,10 @@ public class InputDialog extends AbstractFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(Input, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Cancel)
                     .addComponent(Accept))

@@ -16,6 +16,10 @@ public abstract class AbstractFrame extends javax.swing.JFrame{
         initComponents();
     }
     
+    public void messageDialog_returnValue(int selection){
+        
+    }
+    
     public void inputDialog_returnValue(Object returnValue, int selection){
         
     }

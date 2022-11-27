@@ -18,7 +18,7 @@ public class TableDialog extends AbstractFrame {
     public TableDialog(int selection, String dialogText, String dialogTitle, DefaultTableModel table, Language language, AbstractFrame parent) {
         initComponents();
 
-        this.setSize(450, 381);
+        this.setSize(600, 300);
         this.setLocationRelativeTo(null);
         
         this.selection = selection;
@@ -91,8 +91,11 @@ public class TableDialog extends AbstractFrame {
             }
         });
 
+        DialogText.setEditable(false);
         DialogText.setColumns(20);
+        DialogText.setLineWrap(true);
         DialogText.setRows(5);
+        DialogText.setWrapStyleWord(true);
         jScrollPane2.setViewportView(DialogText);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -103,13 +106,13 @@ public class TableDialog extends AbstractFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(93, 93, 93)
+                        .addGap(128, 128, 128)
                         .addComponent(Accept)
-                        .addGap(102, 102, 102)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 186, Short.MAX_VALUE)
                         .addComponent(Cancel)
-                        .addGap(0, 97, Short.MAX_VALUE))
+                        .addGap(128, 128, 128))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
@@ -117,9 +120,9 @@ public class TableDialog extends AbstractFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Accept)
